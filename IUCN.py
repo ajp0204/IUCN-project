@@ -14,7 +14,7 @@ iucn_order = ["Critically Endangered","Endangered","Vulnerable","Near Threatened
 present_statuses = [status for status in iucn_order if status in df['Conservation Status'].unique()]
 
 #summary stats 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2, col3, col4, col5 = st.columns(5)
 with col1:
     st.metric("Total Species", len(df))
 with col2:  
@@ -23,6 +23,8 @@ with col3:
     st.metric("Animals", len(df[df['Kingdom'] == 'animalia']))
 with col4:
     st.metric("Plants", len(df[df['Kingdom'] == 'plantae']))
+with col5: 
+    st.metric("Fungi", len(df[df['Kingdom'] == 'fungi']))
 
 #sidebar
 #filter by conservation status
