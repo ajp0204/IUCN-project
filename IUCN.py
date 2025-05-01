@@ -74,7 +74,7 @@ st.markdown("### Species Table")
 df['IUCN Link'] = df['IUCN Link'].apply(lambda url: f"[Link]({url})")
 df = df.fillna("—")
 columns_to_show = ['Common Name', 'Scientific Name', 'Conservation Status', 'Population Trend', 'Classification', 'Kingdom', 'Class', 'IUCN Link']
-st.dataframe(df[columns_to_show], hide_index=True)
+st.markdown(df[columns_to_show].to_markdown(index=False), unsafe_allow_html=True)
 
 #st.dataframe(df, hide_index=True)
 
